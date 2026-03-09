@@ -48,7 +48,7 @@ Página 1: Resumen
 * KPI: Ventas, Margen, % Margen, Pedidos, Ticket medio
 * Línea: Ventas por Date
 * Barras: Top 10 productos por Ventas
-* Segmentadores: YearMonth, Category, Region, Channel, Segment
+* Segmentadores (sliders): YearMonth, Category, Region, Channel, Segment
 
 Página 2: Tiendas
 
