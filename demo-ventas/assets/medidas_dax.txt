@@ -1,0 +1,39 @@
+-- Medidas base
+Ventas := SUM ( fact_ventas[NetAmount] )
+
+Unidades := SUM ( fact_ventas[Quantity] )
+
+Coste := SUMX ( fact_ventas, fact_ventas[UnitCost] * fact_ventas[Quantity] )
+
+Margen := [Ventas] - [Coste]
+
+% Margen := DIVIDE ( [Margen], [Ventas] )
+
+Pedidos := DISTINCTCOUNT ( fact_ventas[OrderID] )
+
+Ticket medio := DIVIDE ( [Ventas], [Pedidos] )
+
+-- Time Intelligence (requiere dim_calendario marcada como tabla de fechas)
+Ventas LY := CALCULATE ( [Ventas], SAMEPERIODLASTYEAR ( dim_calendario[Date] ) )
+
+Var Ventas YoY := [Ventas] - [Ventas LY]
+
+% Var Ventas YoY := DIVIDE ( [Var Ventas YoY], [Ventas LY] )
+
+Ventas YTD := TOTALYTD ( [Ventas], dim_calendario[Date] )
+
+Ventas YTD LY := CALCULATE ( [Ventas YTD], SAMEPERIODLASTYEAR ( dim_calendario[Date] ) )
+
+% Var Ventas YTD := DIVIDE ( [Ventas YTD] - [Ventas YTD LY], [Ventas YTD LY] )
+
+-- Objetivos (por mes y tienda)
+Objetivo Ventas := SUM ( objetivos_mensuales[SalesTarget] )
+
+% Cumplimiento := DIVIDE ( [Ventas], [Objetivo Ventas] )
+
+Brecha a objetivo := [Ventas] - [Objetivo Ventas]
+
+-- Calidad (devoluciones)
+Ventas devoluciones := CALCULATE ( [Ventas], fact_ventas[IsReturn] = 1 )
+
+% Ventas devueltas := DIVIDE ( [Ventas devoluciones], [Ventas] )

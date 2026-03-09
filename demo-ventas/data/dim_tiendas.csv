@@ -1,0 +1,19 @@
+StoreID,StoreName,City,Region,OpenDate
+1,Tienda 01,Madrid,Norte,2022-09-18
+2,Tienda 02,Barcelona,Sur,2019-08-08
+3,Tienda 03,Valencia,Sur,2020-01-01
+4,Tienda 04,Sevilla,Levante,2018-12-19
+5,Tienda 05,Bilbao,Levante,2017-06-17
+6,Tienda 06,Zaragoza,Canarias,2023-05-31
+7,Tienda 07,Málaga,Norte,2022-04-01
+8,Tienda 08,Murcia,Sur,2021-02-23
+9,Tienda 09,Palma,Centro,2019-03-21
+10,Tienda 10,Las Palmas,Norte,2022-07-31
+11,Tienda 11,Valladolid,Levante,2020-05-12
+12,Tienda 12,Alicante,Canarias,2019-07-19
+13,Tienda 13,Córdoba,Sur,2019-08-08
+14,Tienda 14,Vigo,Sur,2017-10-25
+15,Tienda 15,Gijón,Sur,2016-09-26
+16,Tienda 16,Granada,Sur,2020-06-07
+17,Tienda 17,Santander,Levante,2023-02-06
+18,Tienda 18,Pamplona,Norte,2016-07-05
